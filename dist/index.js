@@ -52,6 +52,7 @@ const main = async () => {
             httpOnly: true,
             secure: constants_1.__pord__,
             sameSite: 'lax',
+            domain: 'https://client-reddit-ten.vercel.app',
         },
         secret: process.env.SESSION_SECREST_DEV,
         saveUninitialized: false,

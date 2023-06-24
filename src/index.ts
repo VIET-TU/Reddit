@@ -56,6 +56,7 @@ const main = async () => {
 				httpOnly: true, // JS frontend cannot access the cookie
 				secure: __pord__, // cookie only works in https
 				sameSite: 'lax', // protection against CSRF
+				domain: 'https://client-reddit-ten.vercel.app', // replace with your client's domain
 			},
 			secret: process.env.SESSION_SECREST_DEV as string,
 			saveUninitialized: false, // don't save empty sessions, right from the start (only store when login)
