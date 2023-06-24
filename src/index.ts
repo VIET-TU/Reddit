@@ -36,7 +36,7 @@ const main = async () => {
 		.catch((error) => console.log(error))
 
 	const app = express()
-	app.use(cors({ origin: 'https://client-reddit-ten.vercel.app/', credentials: true }))
+	app.use(cors({ origin: 'https://client-reddit-ten.vercel.app', credentials: true }))
 
 	// session/Cookie store
 	const mongoUrl = `mongodb+srv://${process.env.SESSION_DB_USERNAME_DEV_PROD}:${process.env.SESSION_DB_PASSWORD_DEV_PROD}@cluster0.a98oldp.mongodb.net/?retryWrites=true&w=majority`
@@ -79,7 +79,7 @@ const main = async () => {
 	await apolloServer.start()
 	apolloServer.applyMiddleware({
 		app,
-		cors: { origin: 'https://client-reddit-ten.vercel.app/', credentials: true },
+		cors: { origin: 'https://client-reddit-ten.vercel.app', credentials: true },
 	})
 	const PORT = process.env.PORT || 4000
 	await new Promise((resolve) => app.listen({ port: PORT }, resolve as () => void))
