@@ -51,7 +51,7 @@ const main = async () => {
             maxAge: 1000 * 60 * 60,
             httpOnly: true,
             secure: constants_1.__pord__,
-            sameSite: 'lax',
+            sameSite: 'none',
             domain: 'https://client-reddit-ten.vercel.app',
         },
         secret: process.env.SESSION_SECREST_DEV,

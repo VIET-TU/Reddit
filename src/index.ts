@@ -55,7 +55,7 @@ const main = async () => {
 				maxAge: 1000 * 60 * 60, // 1 hour
 				httpOnly: true, // JS frontend cannot access the cookie
 				secure: __pord__, // cookie only works in https
-				sameSite: 'lax', // protection against CSRF
+				sameSite: 'none', // protection against CSRF
 				domain: 'https://client-reddit-ten.vercel.app', // replace with your client's domain
 			},
 			secret: process.env.SESSION_SECREST_DEV as string,
