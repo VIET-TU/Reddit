@@ -37,7 +37,7 @@ const main = async () => {
         .then(async () => console.log('connet db success ...'))
         .catch((error) => console.log(error));
     const app = (0, express_1.default)();
-    app.use((0, cors_1.default)({ origin: 'http://localhost:3000', credentials: true }));
+    app.use((0, cors_1.default)({ origin: 'https://client-reddit-ten.vercel.app/', credentials: true }));
     const mongoUrl = `mongodb+srv://${process.env.SESSION_DB_USERNAME_DEV_PROD}:${process.env.SESSION_DB_PASSWORD_DEV_PROD}@cluster0.a98oldp.mongodb.net/?retryWrites=true&w=majority`;
     await mongoose_1.default
         .connect(mongoUrl)
@@ -73,7 +73,7 @@ const main = async () => {
     await apolloServer.start();
     apolloServer.applyMiddleware({
         app,
-        cors: { origin: 'http://localhost:3000', credentials: true },
+        cors: { origin: 'https://client-reddit-ten.vercel.app/', credentials: true },
     });
     const PORT = process.env.PORT || 4000;
     await new Promise((resolve) => app.listen({ port: PORT }, resolve));
